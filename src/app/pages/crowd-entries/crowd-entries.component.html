@@ -1,0 +1,25 @@
+<!-- HEADER -->
+<div class="entries-header">
+  <h2>Crowd Entries</h2>
+  
+</div>
+
+<!-- TABLE CARD -->
+<div class="table-card" [style.height]="tableHeight">
+  <ag-grid-angular
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [pagination]="true"
+    [paginationPageSize]="paginationPageSize"
+    [paginationPageSizeSelector]="[5, 10, 25, 50]"
+    (paginationChanged)="onPaginationChanged($event)"
+    (gridReady)="onGridReady($event)"
+    [getRowStyle]="getRowStyle"
+    [rowHeight]="rowHeight"
+    [headerHeight]="headerHeight"
+    [style.--ag-header-background-color]="'#f3f4f6'"
+    [style.--ag-header-foreground-color]="'#111'">
+  </ag-grid-angular>
+</div>

@@ -1,0 +1,29 @@
+<div class="sidebar-container">
+
+  <!-- LOGO SECTION -->
+  <div class="logo-row">
+    <img src="assets/icons/logo-white.png" alt="Kloudspot Logo" class="logo-icon" />
+    <span class="logo-text">Kloudspot</span>
+  </div>
+
+  <!-- Navigation -->
+ <nav>
+  <a routerLink="/dashboard/overview" routerLinkActive="active">
+    <img src="assets/icons/home.png" class="menu-icon" />
+    Overview
+  </a>
+
+  <a routerLink="/dashboard/entries" routerLinkActive="active">
+    <img src="assets/icons/users.png" class="menu-icon" />
+    Crowd Entries
+  </a>
+</nav>
+
+<div class="logout" (click)="logout()">
+  <img src="assets/icons/logout.png" class="logout-icon" />
+  <span>Logout</span>
+</div>
+
+
+
+</div>

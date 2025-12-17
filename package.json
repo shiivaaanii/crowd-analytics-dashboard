@@ -29,13 +29,21 @@
     "@angular/forms": "^21.0.0",
     "@angular/platform-browser": "^21.0.0",
     "@angular/router": "^21.0.0",
+    "ag-grid-angular": "^35.0.0",
+    "ag-grid-community": "^35.0.0",
+    "chart.js": "^4.5.1",
+    "chartjs-plugin-annotation": "^3.0.1",
+    "luxon": "^3.7.2",
     "rxjs": "~7.8.0",
+    "socket.io-client": "^4.8.1",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@angular/build": "^21.0.3",
     "@angular/cli": "^21.0.3",
     "@angular/compiler-cli": "^21.0.0",
+    "@types/luxon": "^3.7.1",
+    "@types/socket.io-client": "^1.4.36",
     "jsdom": "^27.1.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"

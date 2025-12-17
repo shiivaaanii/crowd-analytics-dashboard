@@ -1,0 +1,102 @@
+/* Sidebar (NOT fixed) */
+.sidebar-container {
+  width: 240px;
+  height: 100%;
+  background: linear-gradient(180deg, #0F3A47 0%, #0A2C35 100%);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  padding: 28px 22px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background overlay */
+.sidebar-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/sidebar-bg.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Keep content above overlay */
+.sidebar-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* LOGO ROW */
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 50px;
+}
+
+.logo-icon {
+  width: 40px;       /* slightly bigger */
+  height: 40px;
+}
+
+.logo-text {
+  font-size: 20px;   /* slightly larger than menu text */
+  font-weight: 600;
+  color: white;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  background: #1f4e66;
+  opacity: 1;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* LOGOUT */
+.logout {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 10px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.logout:hover {
+  opacity: 1;
+}
+
+.logout-icon {
+  width: 20px;
+}

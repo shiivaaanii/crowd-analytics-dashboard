@@ -1,0 +1,50 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0');
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-text h1 {
+  color: white;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.login-card {
+  width: 350px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-card label {
+  display: block;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #008b8a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}

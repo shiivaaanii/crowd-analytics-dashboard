@@ -1,0 +1,44 @@
+<div class="login-container">
+  <div class="welcome-text">
+    <h1>Welcome to the <br> Crowd Management System</h1>
+  </div>
+
+  <div class="login-card">
+    <div class="logo">kloudspot</div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+  <label>Email / Login ID *</label>
+  <input
+    type="text"
+    formControlName="email"
+    placeholder="Parking_solutions"
+  />
+  <div class="error" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+    Email is required
+  </div>
+
+  <label>Password *</label>
+  <div class="password-wrapper">
+    <input
+      [type]="showPassword ? 'text' : 'password'"
+      formControlName="password"
+      placeholder="********"
+    />
+    <span class="toggle" (click)="togglePassword()">Show</span>
+  </div>
+
+  <div class="error" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+    Password is required
+  </div>
+
+
+
+  <button type="submit" [disabled]="loading">
+    {{ loading ? 'Logging in...' : 'Login' }}
+  </button>
+
+</form>
+
+  </div>
+</div>

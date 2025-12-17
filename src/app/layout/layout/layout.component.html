@@ -1,0 +1,96 @@
+<div class="layout-container">
+
+  <app-sidebar></app-sidebar>
+
+  <div class="main-wrapper">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+
+      <div class="left-section">
+        <h2>Crowd Solutions</h2>
+
+        <div class="divider"></div>
+
+        <!-- LOCATION DROPDOWN -->
+        <ng-container *ngIf="sites$ | async as sites">
+          <select
+            #siteSelect
+            class="location-dropdown"
+            (change)="onSiteChange(siteSelect.value, sites)">
+
+            <option
+              *ngFor="let site of sites"
+              [value]="site.siteId"
+              [selected]="(selectedSite$ | async)?.siteId === site.siteId">
+              📍 {{ site.name }}
+            </option>
+
+          </select>
+        </ng-container>
+
+        <div class="divider"></div>
+
+        <!-- DATE RANGE DROPDOWN -->
+        <select
+          class="range-dropdown"
+          (change)="setRange($any($event.target).value)">
+
+          <option value="today" selected>📅 Today</option>
+          <option value="yesterday">📅 Yesterday</option>
+          <option value="tomorrow">📅 Tomorrow</option>
+
+        </select>
+      </div>
+
+      <div class="right-section">
+        <div class="lang-box">En</div>
+
+        <!-- SIMULATION CONTROLS -->
+<button class="sim-btn start" (click)="startSim()">▶ Start</button>
+<button class="sim-btn stop" (click)="stopSim()">■ Stop</button>
+
+
+        <!-- 🔔 ALERT ICON -->
+        <span class="icon bell" (click)="toggleAlerts()">🔔</span>
+
+        <img src="/assets/icons/user.png" class="profile" />
+      </div>
+
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-body">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- 🔔 ALERT SLIDE PANEL -->
+    <div class="alerts-panel" [class.open]="showAlerts">
+      <div class="alerts-header">
+        <h3>Alerts</h3>
+        <span class="close" (click)="closeAlerts()">✕</span>
+      </div>
+
+      <div class="alerts-body">
+        <div *ngIf="alerts.length === 0" class="empty">
+          No alerts yet
+        </div>
+
+        <div class="alert-card" *ngFor="let a of alerts">
+          <div class="alert-top">
+            <strong>{{ a.action | titlecase }}</strong>
+            <span class="severity" [class]="a.severity">
+              {{ a.severity }}
+            </span>
+          </div>
+
+          <div class="alert-meta">
+            <div>{{ a.zoneName || 'Unknown Zone' }}</div>
+            <div class="time">{{ a.time }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

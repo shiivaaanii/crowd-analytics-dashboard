@@ -1,0 +1,78 @@
+<!-- TOP HEADER -->
+<div class="overview-header">
+  <h2>Overview</h2>
+
+  
+</div>
+
+<!-- KPI CARDS -->
+<div class="kpi-row">
+
+  <div class="kpi-card">
+    <h3>Live Occupancy</h3>
+    <h1>{{ liveOccupancy }}</h1>
+    <p class="trend up">Live from latest hour</p>
+  </div>
+
+  <div class="kpi-card">
+    <h3>Today's Footfall</h3>
+    <h1>{{ todayFootfall }}</h1>
+    <p class="trend down">Total entries today</p>
+  </div>
+
+  <div class="kpi-card">
+    <h3>Avg Dwell Time</h3>
+    <h1>{{ avgDwellTime }}</h1>
+    <p class="trend up">Average per visitor</p>
+  </div>
+
+</div>
+
+
+<!-- OCCUPANCY CHART -->
+<div class="chart-card">
+  <h3>Overall Occupancy</h3>
+  <div class="chart-canvas-wrapper">
+  <canvas #occupancyCanvas></canvas>
+</div>
+
+</div>
+
+<h3>Demographics</h3>
+
+<div class="demo-row">
+
+  <div class="donut-card">
+    <h4>Chart of Demographics</h4>
+
+    <div class="donut-wrapper">
+      <div class="chart-canvas-wrapper">
+  <canvas #donutCanvas></canvas>
+</div>
+
+      <div class="donut-center">
+        <p>Total Crowd</p>
+        <h2>{{ totalCrowd }}</h2>
+      </div>
+    </div>
+
+    <div class="legend-info">
+      <div>
+        <img src="assets/icons/male.png" />
+        {{ maleCount }} Males
+      </div>
+      <div>
+        <img src="assets/icons/female.png" />
+        {{ femaleCount }} Females
+      </div>
+    </div>
+  </div>
+
+  <div class="analysis-card">
+    <h4>Demographics Analysis</h4>
+    <div class="chart-canvas-wrapper">
+  <canvas #genderCanvas></canvas>
+</div>
+  </div>
+
+</div>
